@@ -1,0 +1,17 @@
+[package]
+name = "gstrips"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lrlex = "0.10.2"
+lrpar = "0.10.2"
+cfgrammar = "0.10.2"
+
+
+[build-dependencies]
+lrlex = "0.10.2"
+lrpar = "0.10.2"
+cfgrammar = "0.10.2"
