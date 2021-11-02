@@ -22,6 +22,15 @@ Factor -> Result<u64, ()>:
 %%
 // Any functions here are in scope for all the grammar actions above.
 
+use lrpar::Span;
+use std::collections::HashMap;
+
+pub enum Domain {
+  Domain{
+    types: HashMap<String, String>,
+  },
+}
+
 fn parse_int(s: &str) -> Result<u64, ()> {
     match s.parse::<u64>() {
         Ok(val) => Ok(val),
@@ -31,3 +40,5 @@ fn parse_int(s: &str) -> Result<u64, ()> {
         }
     }
 }
+
+
