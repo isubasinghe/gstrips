@@ -1,12 +1,18 @@
 %%
 "and" "and"
 "or" "or"
-"action"
-"precondition"
-"effect"
-"forall"
-"when"
-":goal"
+"not" "not"
+"action" "action"
+"precondition" "precondition"
+"parameters" "parameters"
+"effect" "effect"
+"forall" "forall"
+"when" "when"
+"goal" "goal"
+"types" "types"
+"predicates" "predicates"
+"functions" "functions"
+([a-z]+(-+[a-z]+))* "ID"
 [0-9]+ "INT"
 ":" ":"
 "\?" "?"
@@ -14,6 +20,8 @@
 \* "*"
 \( "("
 \) ")"
+">" ">"
+"=" "="
 [\t ]+ ;
 
 
