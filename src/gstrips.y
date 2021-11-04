@@ -25,9 +25,18 @@ Factor -> Result<u64, ()>:
 use lrpar::Span;
 use std::collections::HashMap;
 
+
+type TypeId = u64;
+
+pub enum Atom {
+  Label(String),
+  Param(String, Vec<(String, TypeId)>)
+}
+
 pub enum Domain {
   Domain{
     types: HashMap<String, String>,
+    predicates: Vec<Atom>
   },
 }
 
