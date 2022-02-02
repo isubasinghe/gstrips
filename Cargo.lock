@@ -12,6 +12,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "anyhow"
+version = "1.0.53"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "94a45b455c14666b85fc40a019e8ab9eb75e3a124e05494f5397122bc9eb06e0"
+
+[[package]]
 name = "autocfg"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -52,16 +58,16 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "cfgrammar"
-version = "0.10.2"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bae6280c9962882250fa36f66a7c365da3a7ad3a3faa3947c1dc1edc46f59f0c"
+checksum = "484386033b5127f42ac3afcc0ea6fca7ae35a5c2c6000a7f82c92fd767d49d1e"
 dependencies = [
  "indexmap",
  "lazy_static",
  "num-traits",
  "regex",
  "serde",
- "vob 2.0.6",
+ "vob",
 ]
 
 [[package]]
@@ -75,6 +81,26 @@ dependencies = [
  "num-traits",
  "time",
  "winapi",
+]
+
+[[package]]
+name = "enum-iterator"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4eeac5c5edb79e4e39fe8439ef35207780a11f69c52cbe424ce3dfad4cb78de6"
+dependencies = [
+ "enum-iterator-derive",
+]
+
+[[package]]
+name = "enum-iterator-derive"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c134c37760b27a871ba422106eedbb8247da973a09e82558bf26d619c882b159"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -102,6 +128,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "14dbbfd5c71d70241ecf9e6f13737f7b5ce823821063188d7e46c41d371eebd5"
 dependencies = [
  "unicode-width",
+]
+
+[[package]]
+name = "getset"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e45727250e75cc04ff2846a66397da8ef2b3db8e40e0cef4df67950a07621eb9"
+dependencies = [
+ "proc-macro-error",
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -143,23 +181,25 @@ checksum = "7b2f96d100e1cf1929e7719b7edb3b90ab5298072638fccd77be9ce942ecdfce"
 
 [[package]]
 name = "lrlex"
-version = "0.10.2"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d875beb7649d09a515063af2324810750eee9cbb11dc63f84eb589ec964db7bb"
+checksum = "141b6269c1cde1151568b021aca62c6bcff9b0d01fa2fecde02083d359db3b17"
 dependencies = [
  "getopts",
  "lazy_static",
  "lrpar",
  "num-traits",
  "regex",
+ "serde",
  "try_from",
+ "vergen",
 ]
 
 [[package]]
 name = "lrpar"
-version = "0.10.2"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "79b1941c6039a239261147ded796f60765c156d271a8e3ad64ff17bff26bab5d"
+checksum = "6226a0fcf65e1584eedad64dde743056341dd945611ce43b095bfca8649e8ce9"
 dependencies = [
  "bincode",
  "cactus",
@@ -174,14 +214,14 @@ dependencies = [
  "serde",
  "static_assertions",
  "vergen",
- "vob 2.0.6",
+ "vob",
 ]
 
 [[package]]
 name = "lrtable"
-version = "0.10.2"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18252e1bc40e809ee802258e4228235816175154171a5fe5a595531422e0edea"
+checksum = "5a5d3e5d1d18adc715f52c4da33715bbd740080cecb3e66582b126cdc7074ef7"
 dependencies = [
  "cfgrammar",
  "fnv",
@@ -190,7 +230,7 @@ dependencies = [
  "sparsevec",
  "static_assertions",
  "try_from",
- "vob 2.0.6",
+ "vob",
 ]
 
 [[package]]
@@ -235,6 +275,30 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "10f4872ae94d7b90ae48754df22fd42ad52ce740b8f370b03da4835417403e53"
 dependencies = [
  "ucd-trie",
+]
+
+[[package]]
+name = "proc-macro-error"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c"
+dependencies = [
+ "proc-macro-error-attr",
+ "proc-macro2",
+ "quote",
+ "syn",
+ "version_check",
+]
+
+[[package]]
+name = "proc-macro-error-attr"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "version_check",
 ]
 
 [[package]]
@@ -287,17 +351,14 @@ version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0dfe2087c51c460008730de8b57e6a320782fbfb312e1f4d520e6c6fae155ee"
 dependencies = [
- "semver 0.11.0",
+ "semver",
 ]
 
 [[package]]
-name = "rustc_version"
-version = "0.4.0"
+name = "rustversion"
+version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366"
-dependencies = [
- "semver 1.0.4",
-]
+checksum = "f2cc38e8fa666e2de3c4aba7edeb5ffc5246c1c2ed0e3d17e560aeeba736b23f"
 
 [[package]]
 name = "semver"
@@ -307,12 +368,6 @@ checksum = "f301af10236f6df4160f7c3f04eec6dbc70ace82d23326abad5edee88801c6b6"
 dependencies = [
  "semver-parser",
 ]
-
-[[package]]
-name = "semver"
-version = "1.0.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "568a8e6258aa33c13358f81fd834adb854c6f7c9468520910a9b1e8fac068012"
 
 [[package]]
 name = "semver-parser"
@@ -352,7 +407,7 @@ dependencies = [
  "num-traits",
  "packedvec",
  "serde",
- "vob 3.0.1",
+ "vob",
 ]
 
 [[package]]
@@ -370,6 +425,26 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "854babe52e4df1653706b98fcfc05843010039b406875930a70e4d9644e5c417"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aa32fd3f627f367fe16f893e2597ae3c05020f8bba2666a4e6ea73d377e5714b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -412,25 +487,24 @@ checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
 
 [[package]]
 name = "vergen"
-version = "3.2.0"
+version = "5.1.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e7141e445af09c8919f1d5f8a20dae0b20c3b57a45dee0d5823c6ed5d237f15a"
+checksum = "6cf88d94e969e7956d924ba70741316796177fa0c79a2c9f4ab04998d96e966e"
 dependencies = [
- "bitflags",
+ "anyhow",
+ "cfg-if 1.0.0",
  "chrono",
- "rustc_version 0.4.0",
+ "enum-iterator",
+ "getset",
+ "rustversion",
+ "thiserror",
 ]
 
 [[package]]
-name = "vob"
-version = "2.0.6"
+name = "version_check"
+version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8af6d79df9ae93c259d5d076bad5741c3dd650bc10a13dd83704b0c29a280f15"
-dependencies = [
- "num-traits",
- "rustc_version 0.3.3",
- "serde",
-]
+checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 
 [[package]]
 name = "vob"
@@ -439,7 +513,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6aa1fb8228d4663848316a0d0c6fddb1d843bd283a55a6778e1bcecff61f7b41"
 dependencies = [
  "num-traits",
- "rustc_version 0.3.3",
+ "rustc_version",
  "serde",
 ]
 
